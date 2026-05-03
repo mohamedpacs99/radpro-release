@@ -1,0 +1,53 @@
+{
+  "name": "radpro-scheduler",
+  "version": "2.0.2",
+  "description": "RadPro — Full Radiology Department Scheduler",
+  "author": "Radiology Department",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64",
+    "release": "electron-builder --win --x64 --publish always"
+  },
+  "build": {
+    "appId": "com.radiology.radpro",
+    "productName": "RadPro Scheduler",
+    "directories": { "output": "dist" },
+    "publish": {
+      "provider": "github",
+      "owner": "mohamedpacs99",
+      "repo": "radpro-release",
+      "private": false
+    },
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "assets/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "assets/icon.ico",
+      "shortcutName": "RadPro Scheduler"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "supabase-sync.js",
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ]
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.7"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
+
