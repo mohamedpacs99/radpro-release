@@ -1,6 +1,6 @@
 {
   "name": "radpro-scheduler",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "description": "RadPro — Full Radiology Department Scheduler",
   "author": "Radiology Department",
   "main": "main.js",
@@ -50,6 +50,7 @@
     "electron-builder": "^24.0.0"
   }
 }
+
 
 
 
